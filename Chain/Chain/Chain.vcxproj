@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Chain.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Chain.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5955052C-0FF5-4EB7-BE6F-2AD304F44D4C}</ProjectGuid>
     <RootNamespace>Chain</RootNamespace>
@@ -117,13 +124,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Project1\Project1\Chain.cpp" />
-    <ClCompile Include="..\..\Project1\Project1\Main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Project1\Project1\Chain.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
