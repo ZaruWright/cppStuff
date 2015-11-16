@@ -12,9 +12,8 @@ public:
 	Vector(const std::initializer_list<T>&);
 
 	void pushBack(const T&);
-	T getElement(const size_t) const;
-
-	T operator [](const size_t) const;
+	T & getElement(const size_t) const;
+	T & operator [](const size_t) const;
 
 	const bool isEmpty() const;
 	const bool isFull() const;
@@ -23,13 +22,13 @@ public:
 	~Vector();
 
 private:
-	void grow(const int);
-
+	void grow(const size_t);
+	const bool withinRange(const size_t) const;
 
 	T* _vector;
-	int _size;
-	int _length;
-	int _growNumber;
+	size_t _size;
+	size_t _length;
+	size_t _growNumber;
 };
 
 template<typename T>
@@ -90,35 +89,48 @@ inline const int Vector<T>::length() const
 }
 
 template<typename T>
-inline T Vector<T>::getElement(const size_t position) const
+inline T& Vector<T>::getElement(const size_t position) const
+{
+	if (!withinRange(position)) 
+	{
+		std::cerr << "You're trying to access an element out of the vector" << std::endl;
+		exit(-1);
+	}
+
+	
+}
+
+template<typename T>
+inline T& Vector<T>::operator[](const size_t position) const
 {
 	return this->_vector[position];
 }
 
 template<typename T>
-inline T Vector<T>::operator[](const size_t position) const
-{
-	return getElement(position);
-}
-
-template<typename T>
 inline Vector<T>::~Vector()
 {
+	delete[] this->_vector;
 }
 
 
 template<class T>
-inline void Vector<T>::grow(const int valueToGrow)
+inline void Vector<T>::grow(const size_t valueToGrow)
 {
 	int sizeAux = valueToGrow * _size;
 	T* beginAux = new T[sizeAux];
-	for (int i = 0; i < _size; ++i)
+	for (size_t i = 0; i < _size; ++i)
 	{
 		beginAux[i] = _vector[i];
 	}
 	delete[] _vector;
 	_vector = beginAux;
 	_size = sizeAux;
+}
+
+template<typename T>
+inline const bool Vector<T>::withinRange(const size_t position) const
+{
+	return (0 <= position) && (position < _length);
 }
 
 #endif
