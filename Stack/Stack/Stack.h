@@ -17,6 +17,7 @@ public:
 	T top() const;
 
 	const bool isEmpty() const;
+	const bool isFull() const;
 
 
 private:
@@ -80,7 +81,7 @@ inline T Stack<T>::pop()
 template<class T>
 inline void Stack<T>::push(const T & value)
 {
-	if (_size <= _length) 
+	if (this->isFull()) 
 	{
 		growStack(2);
 	}
@@ -107,7 +108,13 @@ inline const bool Stack<T>::isEmpty() const
 }
 
 template<class T>
-inline void Stack<T>::growStack(int valueToGrow)
+inline const bool Stack<T>::isFull() const
+{
+	return this->_length == this->_size;
+}
+
+template<class T>
+inline void Stack<T>::growStack(const int valueToGrow)
 {
 	int sizeAux = valueToGrow * _size;
 	T* beginAux = new T[sizeAux];
