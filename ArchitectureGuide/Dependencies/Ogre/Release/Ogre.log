@@ -1,0 +1,13 @@
+﻿Build started 17/11/2015 2:32:00.
+     1>Project "C:\Users\Zaru\Git\cppStuff\ArchitectureGuide\Dependencies\Ogre\Ogre.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /IC:\Users\Zaru\Git\cppStuff\ArchitectureGuide\\Dependencies\Include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\Ogre.pdb" /Gd /TP /analyze- /errorReport:prompt Ogre.cpp
+         Ogre.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\Zaru\Git\cppStuff\ArchitectureGuide\\Dependencies\Lib\Release\Ogre.lib" /NOLOGO /LTCG Release\Ogre.obj
+         Ogre.vcxproj -> C:\Users\Zaru\Git\cppStuff\ArchitectureGuide\\Dependencies\Lib\Release\Ogre.lib
+     1>Done Building Project "C:\Users\Zaru\Git\cppStuff\ArchitectureGuide\Dependencies\Ogre\Ogre.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.46
